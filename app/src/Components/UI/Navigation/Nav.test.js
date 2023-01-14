@@ -4,11 +4,13 @@ import { MemoryRouter } from 'react-router-dom';
 
 describe("Navigation component", () => {
 
-    test('Nav should have ', () => {
+    test('render application link', () => {
         render(<Nav />, { wrapper: MemoryRouter });
 
+        const application = screen.getByText(/Application/)
 
+        expect(application).toBeInTheDocument();
 
-    });
+    })
 
 })

@@ -7,13 +7,13 @@ export default function Nav() {
             <nav>
                 <ul>
                     <li>
-                        <Link to='/'>Anmälan</Link>
+                        <Link to='/'>Application</Link>
                     </li>
                     <li>
-                        <Link to='/kurser'>Kurser</Link>
+                        <Link to='/courses'>Courses</Link>
                     </li>
                     <li>
-                        <Link to='/larare'>Lärare</Link>
+                        <Link to='/teachers'>Teachers</Link>
                     </li>
                 </ul>
             </nav>

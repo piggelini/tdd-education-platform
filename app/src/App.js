@@ -1,7 +1,9 @@
-import Header from './Components/Header/Header';
-import Footer from './Components/Footer/Footer';
+import Header from './Components/UI/Header/Header';
+import Footer from './Components/UI/Footer/Footer';
 import './App.css';
-import Home from './Components/Home/Home'
+import Home from './Components/Pages/Home/Home'
+import Courses from './Components/Pages/Courses/CourseList';
+import Teachers from './Components/Pages/Teachers/TeacherList';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -14,6 +16,14 @@ function App() {
           <Route
             path='/'
             element={<Home />}
+          />
+          <Route
+            path='/courses'
+            element={<Courses />}
+          />
+          <Route
+            path='/teachers'
+            element={<Teachers />}
           />
 
         </Routes>
