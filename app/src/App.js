@@ -2,16 +2,29 @@ import Header from './Components/UI/Header/Header';
 import Footer from './Components/UI/Footer/Footer';
 import './App.css';
 import Home from './Components/Pages/Home/Home'
-import Courses from './Components/Pages/Courses/CourseList';
-import Teachers from './Components/Pages/Teachers/TeacherList';
+import CourseList from './Components/Pages/Courses/CourseList';
+import TeacherList from './Components/Pages/Teachers/TeacherList';
+import CourseDetails from './Components/Pages/Courses/CourseDetails';
+import TeacherDetails from './Components/Pages/Teachers/TeacherDetails';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import ModalContext from './Components/Context/modal-context'
+import DataContext from './Components/Context/data-context';
+import Modal from './Components/UI/Modal/Modal';
+
 
 function App() {
+  const modalContext = useContext(ModalContext);
+
+
+
   return (
 
     <Router>
       <Header />
       <main>
+        {modalContext.showModal &&
+          <Modal />}
         <Routes>
           <Route
             path='/'
@@ -19,11 +32,20 @@ function App() {
           />
           <Route
             path='/courses'
-            element={<Courses />}
+            element={<CourseList />}
           />
           <Route
             path='/teachers'
-            element={<Teachers />}
+            element={<TeacherList />}
+          />
+          <Route
+
+            path="/courses/:id"
+            element={<CourseDetails />}
+          />
+          <Route
+            path="/teachers/:id"
+            element={<TeacherDetails />}
           />
 
         </Routes>

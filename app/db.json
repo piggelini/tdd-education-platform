@@ -1,0 +1,53 @@
+{
+  "courselist": [
+    {
+      "id": 1,
+      "title": "Crochet",
+      "weeks": "5",
+      "description": "Crochet class for beginners to intermediates.",
+      "start": "01-04-2023"
+    },
+    {
+      "title": "dedede",
+      "weeks": "ded",
+      "description": "A short description...",
+      "start": "",
+      "id": 2
+    }
+  ],
+  "teacherlist": [
+    {
+      "id": 1,
+      "firstname": "Mahalo",
+      "lastname": "London",
+      "personalid": "12341234",
+      "email": "Mahalo.London@mail.com",
+      "phone": "32781029283109",
+      "competences": "Watercolor, Knitting, Crochet"
+    },
+    {
+      "firstname": "Sigrid",
+      "lastname": "Widfeldt",
+      "personalid": "",
+      "phone": "12345678976543",
+      "email": "12345678976543",
+      "competences": [
+        "Dance",
+        "Geography"
+      ],
+      "id": 2
+    },
+    {
+      "firstname": "Sigrid",
+      "lastname": "Widfeldt",
+      "personalid": "78788988998",
+      "phone": "+46720085636",
+      "email": "+46720085636",
+      "competences": [
+        "Art",
+        "Dance"
+      ],
+      "id": 3
+    }
+  ]
+}
