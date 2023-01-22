@@ -1,10 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import CourseList from './CourseList';
 
-describe("Home component", () => {
+describe("Courselist", () => {
 
-    test('', () => {
+
+    test('Renders a courses heading', async () => {
         render(<CourseList />);
+
+
+        const courses = screen.getByText(/courses/i);
+
+
+        expect(courses).toBeInTheDocument();
+
 
     });
 

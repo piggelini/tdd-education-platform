@@ -8,6 +8,10 @@ describe("Footer component", () => {
         render(<Footer />, { wrapper: MemoryRouter });
 
 
+        const footer = screen.getByRole('footer');
+
+
+        expect(footer).toBeInTheDocument();
 
 
     });

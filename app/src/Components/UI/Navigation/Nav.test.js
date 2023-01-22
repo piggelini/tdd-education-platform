@@ -13,4 +13,22 @@ describe("Navigation component", () => {
 
     })
 
+    test('render Teachers link', () => {
+        render(<Nav />, { wrapper: MemoryRouter });
+
+        const teach = screen.getByText(/Teachers/)
+
+        expect(teach).toBeInTheDocument();
+
+    })
+
+    test('render courses link', () => {
+        render(<Nav />, { wrapper: MemoryRouter });
+
+        const course = screen.getByText(/Courses/)
+
+        expect(course).toBeInTheDocument();
+
+    })
+
 })

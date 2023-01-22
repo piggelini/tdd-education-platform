@@ -3,10 +3,13 @@ import Home from './Home';
 
 describe("Home component", () => {
 
-    test('', () => {
+    test('Home heading', () => {
         render(<Home />);
 
+        const home = screen.getByText(/course application/i);
 
+
+        expect(home).toBeInTheDocument();
 
     });
 

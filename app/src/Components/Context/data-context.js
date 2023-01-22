@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 const DataContext = React.createContext({
     courselist: [],
     teacherlist: [],
-    course: {},
-    teacher: {},
     addData: () => { },
     getData: () => { }
 
@@ -13,42 +11,37 @@ const DataContext = React.createContext({
 export const DataContextProvider = (props) => {
     const [courselist, setCourselist] = useState([]);
     const [teacherlist, setTeacherlist] = useState([]);
-    const [course, setCourse] = useState();
-    const [teacher, setTeacher] = useState();
 
     useEffect(() => {
-        getData('courselist', "");
-        getData('teacherlist', "");
-
+        updateState('courselist');
+        updateState('teacherlist');
     }, [])
 
     const getData = (datatype, id) => {
-        fetch(`http://localhost:3011/${datatype}/${id}`)
+        return fetch(`http://localhost:3011/${datatype}/${id}`)
             .then((response) => response.json())
-            .then((data) => updateState(datatype, id, data));
     }
 
-
-    const updateState = (datatype, id, data) => {
-        if (id !== "" && datatype === "teacherlist") {
-            setTeacher(data)
-        } else if (id !== "" && datatype === "courselist") {
-            setCourse(data)
-        } else if (datatype === "teacherlist") {
-            setTeacherlist(data);
-        } else if (datatype === "courselist")
-            setCourselist(data)
+    const updateState = (datatype) => {
+        getData(datatype, "")
+            .then((data) => {
+                if (datatype === "teacherlist") {
+                    setTeacherlist(data);
+                } else if (datatype === "courselist")
+                    setCourselist(data)
+            })
     }
 
     const addData = (datatype, data) => {
-
         fetch(`http://localhost:3011/${datatype}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
-        }).then(() => getData(datatype, ""))
+        }).then(() =>
+            updateState(datatype)
+        )
 
     }
 
@@ -59,8 +52,6 @@ export const DataContextProvider = (props) => {
                 teacherlist: teacherlist,
                 addData: addData,
                 getData: getData,
-                course: course,
-                teacher: teacher,
             }}
         >
             {props.children}

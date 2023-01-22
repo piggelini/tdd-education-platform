@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 export default function Nav() {
     return (
-        <div>
+        <div className="">
             <nav>
-                <ul>
+                <ul className='nav nav-pills text-center'>
                     <li>
                         <Link to='/'>Application</Link>
                     </li>

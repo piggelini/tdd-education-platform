@@ -24,10 +24,9 @@ describe('Testing Routing', () => {
 
     test.each`
     path          | componentTestId
-    ${'/'}        | ${'user-list-component'}
-    ${'/users'}   | ${'vehicle-list-component'}
-    ${'/adduser'} | ${'vehicle-list-component'}
-    ${'/adduser'} | ${'user-list-component'}
+    ${'/'}        | ${'courses-component'}
+    ${'/courses'}  | ${'teacher-list-component'}
+    ${'/teachers'} | ${'home-component'}
   `(
         'does not display $componentTestId when path is $path',
         ({ path, componentTestId }) => {

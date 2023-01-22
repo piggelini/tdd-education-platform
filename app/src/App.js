@@ -21,36 +21,38 @@ function App() {
   return (
 
     <Router>
-      <Header />
-      <main>
-        {modalContext.showModal &&
-          <Modal />}
-        <Routes>
-          <Route
-            path='/'
-            element={<Home />}
-          />
-          <Route
-            path='/courses'
-            element={<CourseList />}
-          />
-          <Route
-            path='/teachers'
-            element={<TeacherList />}
-          />
-          <Route
+      <div className='flex-app'>
+        <Header />
+        <main>
+          {modalContext.showModal &&
+            <Modal />}
+          <Routes>
+            <Route
+              path='/'
+              element={<Home />}
+            />
+            <Route
+              path='/courses'
+              element={<CourseList />}
+            />
+            <Route
+              path='/teachers'
+              element={<TeacherList />}
+            />
+            <Route
 
-            path="/courses/:id"
-            element={<CourseDetails />}
-          />
-          <Route
-            path="/teachers/:id"
-            element={<TeacherDetails />}
-          />
+              path="/courses/:id"
+              element={<CourseDetails />}
+            />
+            <Route
+              path="/teachers/:id"
+              element={<TeacherDetails />}
+            />
 
-        </Routes>
-      </main>
-      <Footer />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
 
   );

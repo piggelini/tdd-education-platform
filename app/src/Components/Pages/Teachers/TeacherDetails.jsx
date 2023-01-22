@@ -1,20 +1,27 @@
-import { React, useEffect, useContext } from 'react';
+import { React, useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import DataContext from '../../Context/data-context';
 
 export default function TeacherDetails() {
+  const [teacher, setTeacher] = useState({});
+
   const context = useContext(DataContext)
   const { id } = useParams();
 
   useEffect(() => {
-    context.getData("teacherlist", id);
+    context.getData("teacherlist", id)
+      .then((data) => setTeacher(data));
   }, [])
 
-
-  console.log(context.teacher.firstname)
-
-
   return (
-    <h2>{context.teacher.firstname} {context.teacher.lastname}</h2>
+    <section>
+      <h2>{teacher?.firstname} {teacher?.lastname}</h2>
+      <p>Personal identification: {teacher.personalid}</p>
+      <p>Email: {teacher.email}</p>
+      <p>Phone: {teacher.phone}</p>
+      <p>
+        Competence: {teacher.competences}
+      </p>
+    </section>
   )
 }

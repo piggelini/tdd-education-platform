@@ -88,80 +88,83 @@ export default function AddTeacher() {
 
 
     return (
-        <form action="">
-            <label htmlFor='fname'>First name</label>
-            <input
-                type='text'
-                name='fname'
-                id='fname'
-                ref={fnameInputRef}
-            />
-            <label htmlFor='lname'> Last name</label>
-            <input
-                type='text'
-                name='lname'
-                id='lname'
-                ref={lnameInputRef}
-            />
+        <>
+            <h1 className="page-header">Add a teacher</h1>
+            <form className='input-group' action="">
+                <label htmlFor='fname'>First name</label>
+                <input
+                    type='text'
+                    name='fname'
+                    id='fname'
+                    ref={fnameInputRef}
+                />
+                <label htmlFor='lname'> Last name</label>
+                <input
+                    type='text'
+                    name='lname'
+                    id='lname'
+                    ref={lnameInputRef}
+                />
 
-            <label htmlFor='personid'>Personal identification</label>
-            <input
-                type='text'
-                name='personid'
-                id='personid'
-                ref={personidInputRef}>
-            </input>
+                <label htmlFor='personid'>Personal identification</label>
+                <input
+                    type='text'
+                    name='personid'
+                    id='personid'
+                    ref={personidInputRef}>
+                </input>
 
-            <label htmlFor='email'>Email</label>
-            <input
-                type='email'
-                name='email'
-                id='email'
-                ref={emailInputRef}
-            />
-            <label htmlFor='phone'>Phone</label>
-            <input
-                type='text'
-                name='phone'
-                id='phone'
-                ref={phoneInputRef}
-            />
-            <label htmlFor='art'>Art</label>
-            <input
-                type='checkbox'
-                name='art'
-                id='art'
-                ref={artInputRef}
-            />
-            <label htmlFor='chem'>Chemistry</label>
-            <input
-                type='checkbox'
-                name='chem'
-                id='chem'
-                ref={chemInputRef}
-            />
-            <label htmlFor='dance'>Dance</label>
-            <input
-                type='checkbox'
-                name='dance'
-                id='dance'
-                ref={danceInputRef}
-            />
-            <label htmlFor='phil'>Philosophy</label>
-            <input
-                type='checkbox'
-                name='phil'
-                id='phil'
-                ref={philInputRef}
-            />
-            <label htmlFor='geo'>Geography</label>
-            <input
-                type='checkbox'
-                name='geo'
-                id='geo'
-                ref={geoInputRef}
-            />
-            <button onClick={onSubmitHandler}>Add this teacher</button>
-        </form>
+                <label htmlFor='email'>Email</label>
+                <input
+                    type='email'
+                    name='email'
+                    id='email'
+                    ref={emailInputRef}
+                />
+                <label htmlFor='phone'>Phone</label>
+                <input
+                    type='text'
+                    name='phone'
+                    id='phone'
+                    ref={phoneInputRef}
+                />
+                <label htmlFor='art'>Art</label>
+                <input
+                    type='checkbox'
+                    name='art'
+                    id='art'
+                    ref={artInputRef}
+                />
+                <label htmlFor='chem'>Chemistry</label>
+                <input
+                    type='checkbox'
+                    name='chem'
+                    id='chem'
+                    ref={chemInputRef}
+                />
+                <label htmlFor='dance'>Dance</label>
+                <input
+                    type='checkbox'
+                    name='dance'
+                    id='dance'
+                    ref={danceInputRef}
+                />
+                <label htmlFor='phil'>Philosophy</label>
+                <input
+                    type='checkbox'
+                    name='phil'
+                    id='phil'
+                    ref={philInputRef}
+                />
+                <label htmlFor='geo'>Geography</label>
+                <input
+                    type='checkbox'
+                    name='geo'
+                    id='geo'
+                    ref={geoInputRef}
+                />
+                <button onClick={onSubmitHandler}>Add this teacher</button>
+            </form>
+        </>
     )
 }

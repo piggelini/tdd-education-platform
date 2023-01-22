@@ -3,7 +3,7 @@ import Nav from '../Navigation/Nav'
 
 export default function Footer() {
     return (
-        <footer>
+        <footer role='footer' className='navbar navbar-default fixed '>
             <Nav />
         </footer>
     )

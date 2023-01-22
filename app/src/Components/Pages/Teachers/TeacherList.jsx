@@ -11,27 +11,32 @@ export default function Teachers() {
 
     return (
         <>
-            <section
-                data-testid='teacher-list-component'
-            >Teachers
+            <div className="text-center">
+                <h2>Teachers</h2>
+                <section
+                    className='row  text-center'
+                    data-testid='teacher-list-component'
+                >
 
-                {context.teacherlist.map((teacher) => {
-                    { console.log(teacher) }
-                    return (
-                        <Link to={`/teachers/${teacher.id}`}>
-                            < article className={classes.article}>
-                                <ul>
-                                    <li> {teacher.firstname} {teacher.lastname}</li>
-                                    <li>Personal id: {teacher.personalid}</li>
-                                    <li>Email: {teacher.email}</li>
-                                    <li>Phone: {teacher.phone}</li>
-                                </ul>
-                            </article>
-                        </Link>
-                    )
-                })}
-            </section>
-            <AddButton modal="add-teacher">Add teacher</AddButton>
+                    {context.teacherlist.map((teacher) => {
+                        { console.log(teacher) }
+                        return (
+                            <Link className='col-md-6 col-xs-12' to={`/teachers/${teacher.id}`}>
+                                < article className=''>
+                                    <ul className='list-unstyled'>
+                                        <li> {teacher.firstname} {teacher.lastname}</li>
+                                        <li>Personal id: {teacher.personalid}</li>
+                                        <li>Email: {teacher.email}</li>
+                                        <li>Phone: {teacher.phone}</li>
+                                    </ul>
+                                </article>
+                            </Link>
+                        )
+                    })}
+
+                </section>
+                <AddButton modal="add-teacher" >Add teacher</AddButton>
+            </div>
         </>
 
     )
